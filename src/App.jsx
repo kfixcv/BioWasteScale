@@ -14,7 +14,6 @@ import {
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   
-  // بيانات تجريبية (Demonstration Data)
   const [records, setRecords] = useState([
     { id: 1, date: '2026-10-19', participantId: 'P-001', mealType: 'Lunch', foodName: 'Rice & Chicken', category: 'Grains & Meat', served: 500, leftover: 150 },
     { id: 2, date: '2026-10-19', participantId: 'P-002', mealType: 'Breakfast', foodName: 'Oatmeal', category: 'Grains', served: 300, leftover: 0 },
@@ -34,7 +33,6 @@ export default function App() {
 
   const [error, setError] = useState('');
 
-  // الحسابات المباشرة للوحة القيادة
   const dashboardStats = useMemo(() => {
     let totalServed = 0;
     let totalLeftover = 0;
@@ -340,7 +338,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-gray-800 font-sans flex flex-col md:flex-row selection:bg-teal-200 selection:text-teal-900">
-      {/* Sidebar Navigation */}
       <aside className="w-full md:w-72 bg-white border-r border-gray-200 shadow-sm flex-shrink-0 flex flex-col z-10">
         <div className="p-8 border-b border-gray-100 flex flex-col items-center justify-center">
           <div className="w-16 h-16 bg-teal-900 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-teal-900/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
@@ -396,18 +393,17 @@ export default function App() {
 
         <div className="p-6 border-t border-gray-100 bg-gray-50/50 mt-auto">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center border-2 border-white shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center border-2 border-white shadow-md">
               <span className="text-teal-800 font-bold text-sm">HM</span>
             </div>
             <div>
-              <p className="text-sm font-bold text-gray-800">Haneen Madi</p>
+              <p className="text-sm font-bold text-gray-800">Haneen Madhy & Bayan Alharbi</p>
               <p className="text-xs text-emerald-600 font-medium">Administrator</p>
             </div>
           </div>
         </div>
       </aside>
 
-      {/* Main Content Area */}
       <main className="flex-1 p-6 md:p-12 overflow-y-auto relative">
         <div className="max-w-6xl mx-auto">
           {activeTab === 'dashboard' && renderDashboard()}
